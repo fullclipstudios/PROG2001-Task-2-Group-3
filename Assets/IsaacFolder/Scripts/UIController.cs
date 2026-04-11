@@ -8,8 +8,13 @@ public class UIController : MonoBehaviour
     {
         helpUI.SetActive(!helpUI.activeSelf);
     }
+    public void HideHelp()
+    {
+        helpUI.SetActive(false);
+    }
+
     public void QuitGame()
     {
-        SceneManager.LoadScene("MainMenuScreen");
+        SceneManager.LoadScene("MainMenuScreen"); //double check scene name
     }
 }
