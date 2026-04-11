@@ -8,9 +8,10 @@ public class SpiderController : MonoBehaviour
     public float jumpForce = 5f;
     public float keyRotationSpeed = 150f;
     public float mouseRotationSpeed = 1f;
-
+    public Transform spider;
+    private Vector3 defaultPosition;
+    private Quaternion defaultRotation;
     private Rigidbody rb;
-
     private float movementX;
     private float movementZ;
     private float rotateKeys;
@@ -22,6 +23,8 @@ public class SpiderController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        defaultPosition = spider.position;
+        defaultRotation = spider.rotation;
     }
 
     // Called by Player Input (Send Messages)
@@ -45,6 +48,12 @@ public class SpiderController : MonoBehaviour
     void OnJump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    public void Reset() // stop movement?
+    {
+        spider.position = defaultPosition;
+        spider.rotation = defaultRotation;
     }
 
     void FixedUpdate()
