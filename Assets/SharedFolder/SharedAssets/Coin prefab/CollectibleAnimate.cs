@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Rotator : MonoBehaviour
+public class CommonCoinRotator : MonoBehaviour
 {
     void Update() // Basic Z axis spin
     {
