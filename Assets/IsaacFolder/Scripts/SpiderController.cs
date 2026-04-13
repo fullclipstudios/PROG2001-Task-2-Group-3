@@ -21,13 +21,13 @@ public class SpiderController : MonoBehaviour
     private float rotateKeys;
     private float rotateMouse;
 
-    // Collectibles & UI
+    // Collectibles, Audio & UI
     private int count;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject doorTrigger;
-
     private Animator animator;
+    public AudioSource horrorAmbient;
 
     void Start()
     {
