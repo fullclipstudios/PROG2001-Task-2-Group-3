@@ -113,7 +113,7 @@ public class SpiderController : MonoBehaviour
             doorTrigger.gameObject.SetActive(false);
         }
 
-        if(count >= 4) // CHANGE COUNT TO SUIT
+        if(count >= 5) // CHANGE COUNT TO SUIT
         {
             winTextObject.SetActive(true);
         }
