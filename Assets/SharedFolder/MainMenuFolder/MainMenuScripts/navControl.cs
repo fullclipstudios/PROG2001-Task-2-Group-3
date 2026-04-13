@@ -5,8 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class navControl : MonoBehaviour
 {
-    public void LoadMyScene(int sceneNumber)
+        public void LoadJamesScene()
     {
-        SceneManager.LoadScene(sceneNumber);
+        SceneManager.LoadScene("JamesScene"); //double check scene name
+    }
+
+        public void LoadRoseScene()
+    {
+        SceneManager.LoadScene("RoseScene"); //double check scene name
+    }
+
+        public void LoadIsaacScene()
+    {
+        SceneManager.LoadScene("IsaacGameScreen"); //double check scene name
     }
 }
