@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SharedFolder/Scenes/RoseScene.unity
     guid: 86fb8d6c9464a4950a835cd39e47825f
+  - enabled: 1
+    path: Assets/SharedFolder/Scenes/IsaacGameScreen.unity
+    guid: c7f7ab8ca35177947ba3910d7d6c41dd
   m_configObjects: {}
