@@ -1,9 +1,13 @@
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SpiderController : MonoBehaviour
 {
+    // Movement & Reset
     public float speed = 15f;
     public float jumpForce = 5f;
     public float keyRotationSpeed = 150f;
@@ -17,6 +21,12 @@ public class SpiderController : MonoBehaviour
     private float rotateKeys;
     private float rotateMouse;
 
+    // Collectibles & UI
+    private int count;
+    public TextMeshProUGUI countText;
+    public GameObject winTextObject;
+    public GameObject doorTrigger;
+
     private Animator animator;
 
     void Start()
@@ -25,6 +35,9 @@ public class SpiderController : MonoBehaviour
         animator = GetComponent<Animator>();
         defaultPosition = spider.position;
         defaultRotation = spider.rotation;
+
+        SetCountText();
+        winTextObject.SetActive(false);
     }
 
     // Called by Player Input (Send Messages)
@@ -61,7 +74,7 @@ public class SpiderController : MonoBehaviour
         // Movement direction based on input
         Vector3 movement = transform.forward * movementZ + transform.right * movementX;
 
-        if (movement.magnitude > 0.01f)
+        if (movement.magnitude > 0.01f) // 
         {
             rb.velocity = new Vector3(
                 movement.normalized.x * speed,
@@ -90,5 +103,29 @@ public class SpiderController : MonoBehaviour
             currentSpeed = 0f;
 
         animator.SetFloat("Speed", currentSpeed);
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count - " + count.ToString();
+        if(count >= 1)
+        {
+            doorTrigger.gameObject.SetActive(false);
+        }
+
+        if(count >= 4) // CHANGE COUNT TO SUIT
+        {
+            winTextObject.SetActive(true);
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+
+            SetCountText();
+        }
     }
 }
