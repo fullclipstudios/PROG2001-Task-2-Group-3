@@ -4,18 +4,13 @@ using UnityEngine.UI;
 public class SimpleFPSController : MonoBehaviour
 {
     [Header("Speed")]
-
-    [Tooltip("Speed of the player")]
     [SerializeField] private float speed = 5f;
-    
+
     [Header("Jump & Gravity")]
-    [Tooltip("Player gravity")]
     [SerializeField] private float gravity = -9.81f;
-    [Tooltip("Jump Height")]
     [SerializeField] private float jumpHeight = 1.5f;
 
     [Header("Sensitivity")]
-    [Tooltip("Mouse sens")]
     [SerializeField] private float mouseSensitivity = 100f;
 
     [SerializeField] private int count = 0;
@@ -23,12 +18,8 @@ public class SimpleFPSController : MonoBehaviour
     [SerializeField] private Text countText;
     [SerializeField] private GameObject winTextObject;
 
-    
-
     [Header("Look clamping")]
-    [Tooltip("Max down look")]
     [SerializeField] private float minLookAngle = -90f;
-    [Tooltip("Max up Look")]
     [SerializeField] private float maxLookAngle = 90f; 
 
     public Transform cameraTransform;
@@ -37,17 +28,16 @@ public class SimpleFPSController : MonoBehaviour
     private float yVelocity;
     private float xRotation = 0f;
 
-
-     
-
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
+
+    count = 0;
+    SetCountText();
+}
 
     void Update()
     {
@@ -61,7 +51,6 @@ public class SimpleFPSController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
-
         xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
@@ -94,20 +83,27 @@ public class SimpleFPSController : MonoBehaviour
     }
 
     void SetCountText()
+{
+    if (countText != null)
     {
-        countText.text = "Count - " + count.ToString();
+        countText.text = "Score Count: " + count.ToString();
+    }
 
-        if(count >= 5) // CHANGE COUNT TO SUIT
+    if (count >= 5)
+    {
+        if (winTextObject != null)
         {
             winTextObject.SetActive(true);
         }
     }
+}
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-            count = count + 1;
+            count++;
 
             SetCountText();
         }
