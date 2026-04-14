@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class SimpleFPSController : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class SimpleFPSController : MonoBehaviour
     [Header("Sensitivity")]
     [Tooltip("Mouse sens")]
     [SerializeField] private float mouseSensitivity = 100f;
+
+    [SerializeField] private int count = 0;
+
+    [SerializeField] private Text countText;
+    [SerializeField] private GameObject winTextObject;
 
     
 
@@ -85,5 +91,25 @@ public class SimpleFPSController : MonoBehaviour
         velocity.y = yVelocity;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count - " + count.ToString();
+
+        if(count >= 5) // CHANGE COUNT TO SUIT
+        {
+            winTextObject.SetActive(true);
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+
+            SetCountText();
+        }
     }
 }
