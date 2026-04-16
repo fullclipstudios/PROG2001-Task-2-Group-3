@@ -2647,7 +2647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: countText
@@ -2655,7 +2655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: coinsToWin
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: jumpHeight
