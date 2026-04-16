@@ -16,7 +16,7 @@ public class SimpleFPSController : MonoBehaviour
     [Header("Sensitivity")]
     [SerializeField] private float mouseSensitivity = 100f;
 
-    [SerializeField] private int count = 0;
+    private int count = 0;
 
 
     [Header("Look clamping")]
