@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI; 
+using TMPro;
+
+
 
 public class SimpleFPSController : MonoBehaviour
 {
@@ -15,12 +18,15 @@ public class SimpleFPSController : MonoBehaviour
 
     [SerializeField] private int count = 0;
 
-    [SerializeField] private Text countText;
-    [SerializeField] private GameObject winTextObject;
 
     [Header("Look clamping")]
     [SerializeField] private float minLookAngle = -90f;
     [SerializeField] private float maxLookAngle = 90f; 
+
+    [Header("UI elements")]
+    [SerializeField] private TMP_Text countText;
+    [SerializeField] private GameObject winTextObject;
+    [SerializeField] private int coinsToWin = 5;
 
     public Transform cameraTransform;
 
@@ -86,15 +92,21 @@ public class SimpleFPSController : MonoBehaviour
 {
     if (countText != null)
     {
-        countText.text = "Score Count: " + count.ToString();
+        countText.text = "Coins: " + count.ToString() + "/" + coinsToWin;
     }
 
-    if (count >= 5)
+    if (count >= coinsToWin)
     {
         if (winTextObject != null)
         {
             winTextObject.SetActive(true);
         }
+        //enable mouse
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        //stop player movement
+        Time.timeScale = 0f;
     }
 }
 
