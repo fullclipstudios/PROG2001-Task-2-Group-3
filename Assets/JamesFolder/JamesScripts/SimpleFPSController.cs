@@ -28,6 +28,10 @@ public class SimpleFPSController : MonoBehaviour
     [SerializeField] private GameObject winTextObject;
     [SerializeField] private int coinsToWin = 5;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip coinSound;
+
+    [Header("Camera")]
     public Transform cameraTransform;
 
     private CharacterController controller;
@@ -95,17 +99,18 @@ public class SimpleFPSController : MonoBehaviour
         countText.text = "Coins: " + count.ToString() + "/" + coinsToWin;
     }
 
+    //win condition
     if (count >= coinsToWin)
     {
         if (winTextObject != null)
         {
             winTextObject.SetActive(true);
         }
-        //enable mouse
+        //enable mouse for menu
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        //stop player movement
+        //stop player movement on the scene
         Time.timeScale = 0f;
     }
 }
@@ -116,6 +121,8 @@ public class SimpleFPSController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count++;
+
+            AudioSource.PlayClipAtPoint(coinSound, transform.position);
 
             SetCountText();
         }
