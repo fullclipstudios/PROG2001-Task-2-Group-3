@@ -27,9 +27,12 @@ public class SimpleFPSController : MonoBehaviour
     [SerializeField] private TMP_Text countText;
     [SerializeField] private GameObject winTextObject;
     [SerializeField] private int coinsToWin = 5;
+    [SerializeField] private GameObject menuPanel;
+    private bool isMenuOpen = false;
 
     [Header("Sound")]
     [SerializeField] private AudioClip coinSound;
+    [SerializeField] private AudioClip winSound;
 
     [Header("Camera")]
     public Transform cameraTransform;
@@ -42,21 +45,58 @@ public class SimpleFPSController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
 
     count = 0;
     SetCountText();
-}
+    }
 
     void Update()
     {
         Look();
         Move();
+
+        //if M is pressed, toggle the menu pop up
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ToggleMenu();
+        }
+    }
+
+   public void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+
+        if (menuPanel != null)
+            menuPanel.SetActive(isMenuOpen);
+
+        if (isMenuOpen)
+        {
+            // show cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            // pause game
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            // hide cursor
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            // resume game
+            Time.timeScale = 1f;
+        }
     }
 
     void Look()
     {
+
+        //disable movement when menu open
+        if (isMenuOpen) return;
+
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -65,6 +105,8 @@ public class SimpleFPSController : MonoBehaviour
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+
+        
     }
 
     void Move()
@@ -112,6 +154,10 @@ public class SimpleFPSController : MonoBehaviour
 
         //stop player movement on the scene
         Time.timeScale = 0f;
+
+        //victory sound fx
+        AudioSource.PlayClipAtPoint(winSound, transform.position);
+
     }
 }
 
@@ -122,6 +168,7 @@ public class SimpleFPSController : MonoBehaviour
             other.gameObject.SetActive(false);
             count++;
 
+            //pickup sound fx
             AudioSource.PlayClipAtPoint(coinSound, transform.position);
 
             SetCountText();
