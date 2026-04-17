@@ -2862,12 +2862,20 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
+      propertyPath: winSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3830029b89ea7a04992156c6adbc327c, type: 3}
+    - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
+      propertyPath: coinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c952c74dd0dfb5c44b632b0c5564c936, type: 3}
+    - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: countText
       value: 
       objectReference: {fileID: 2093518913}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: coinsToWin
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
       propertyPath: jumpHeight
