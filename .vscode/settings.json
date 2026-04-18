@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "PROG2001-Task 2-Group 3.sln"
+    "dotnet.defaultSolution": "PROG2001-Task-2-Group-3.sln"
 }

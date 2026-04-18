@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
     }
     public void QuitGame()
     {
-        SceneManager.LoadScene("MainMenuScreen"); //double check scene name
+        SceneManager.LoadScene("MainMenuScene"); //double check scene name
     }
 
 }
