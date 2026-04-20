@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -384.15448, y: 267}
+  m_AnchoredPosition: {x: -322, y: 200}
   m_SizeDelta: {x: -784.1089, y: -550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6674956
@@ -6277,7 +6277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00001049, y: 138}
+  m_AnchoredPosition: {x: -0.00001049, y: 128}
   m_SizeDelta: {x: 157.0667, y: 37.7173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477355317
@@ -24601,7 +24601,7 @@ RectTransform:
   m_GameObject: {fileID: 818054235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7288017, y: 0.7288017, z: 0.7288017}
+  m_LocalScale: {x: 0.5613231, y: 0.5613231, z: 0.5613231}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2114135418}
@@ -24610,8 +24610,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -138.5755}
-  m_SizeDelta: {x: 0, y: -233.301}
+  m_AnchoredPosition: {x: -2, y: -140.86093}
+  m_SizeDelta: {x: 148.85, y: -107.498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818054237
 MonoBehaviour:
@@ -24989,7 +24989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.582, y: 233}
+  m_AnchoredPosition: {x: 20.582, y: 234}
   m_SizeDelta: {x: 198.2316, y: 26.0507}
   m_Pivot: {x: 0.5, y: 0.4999998}
 --- !u!114 &892125088
@@ -36811,7 +36811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 399.8, y: 267}
+  m_AnchoredPosition: {x: 343, y: 204.1}
   m_SizeDelta: {x: -782.3353, y: -550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308247336
@@ -37360,7 +37360,7 @@ RectTransform:
   m_GameObject: {fileID: 1373339457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78789, y: 0.78789, z: 0.78789}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6674955}
@@ -37572,7 +37572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00001049, y: 43}
+  m_AnchoredPosition: {x: -0.00001049, y: 40.000004}
   m_SizeDelta: {x: 157.0667, y: 37.7173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431015334
@@ -39207,7 +39207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -48607,7 +48607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -31}
+  m_AnchoredPosition: {x: 12, y: -79}
   m_SizeDelta: {x: 493.44, y: 125.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823214490
@@ -53160,8 +53160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -40.370617}
+  m_SizeDelta: {x: 0, y: 136.0654}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075925291
 MonoBehaviour:
@@ -53272,7 +53272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000034332, y: 135}
+  m_AnchoredPosition: {x: -0.000034332, y: 130}
   m_SizeDelta: {x: 149.538, y: 40.127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114135419
@@ -53561,6 +53561,10 @@ PrefabInstance:
       propertyPath: winTextObject
       value: 
       objectReference: {fileID: 1538746626}
+    - target: {fileID: 8697805504442523921, guid: dfdc4eb7672b54d649bff08e481746ce, type: 3}
+      propertyPath: mouseSensitivity
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
